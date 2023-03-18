@@ -1,15 +1,11 @@
 <?php
-$servername="localhost";
-$dbitem_name="root";
-$dbitem_price="";
-$dbname="midterm";
+// Connect to database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "echo";
 
-$conn = mysqli_connect($servername,$dbitem_name,$dbitem_price,$dbname);
-
-// Check connection
-if (!$conn){
-    die("Maintenance Mode.");
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
 }
-
-session_start();
-include_once ("sql_utilities.php");
